@@ -1,37 +1,54 @@
-/* Noto Serif SC - Serif Font */
+/* =========================================================
+   本地字体声明 —— Noto Serif SC（思源宋体）+ Noto Sans SC（思源黑体）
+   字体文件请放置在 ./fonts/ 目录下，文件名需与下面的 src 一致。
+   下载来源建议：
+     https://fonts.google.com/noto/specimen/Noto+Serif+SC
+     https://fonts.google.com/noto/specimen/Noto+Sans+SC
+   下载 woff2 后重命名后放入 fonts/ 目录即可。
+   ========================================================= */
+
+/* 思源宋体 —— 用于中文标题 */
 @font-face {
   font-family: 'Noto Serif SC';
-  src: url('../fonts/noto-serif-sc-regular.woff2') format('woff2'),
-       url('../fonts/noto-serif-sc-regular.woff') format('woff');
-  font-weight: 400;
   font-style: normal;
+  font-weight: 400;
   font-display: swap;
+  src: url('../fonts/NotoSerifSC-Regular.woff2') format('woff2');
 }
-
 @font-face {
   font-family: 'Noto Serif SC';
-  src: url('../fonts/noto-serif-sc-bold.woff2') format('woff2'),
-       url('../fonts/noto-serif-sc-bold.woff') format('woff');
-  font-weight: 600;
   font-style: normal;
+  font-weight: 700;
   font-display: swap;
+  src: url('../fonts/NotoSerifSC-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Noto Serif SC';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/NotoSerifSC-Black.woff2') format('woff2');
 }
 
-/* Noto Sans SC - Sans-serif Font */
+/* 思源黑体 —— 用于中文正文 */
 @font-face {
   font-family: 'Noto Sans SC';
-  src: url('../fonts/noto-sans-sc-regular.woff2') format('woff2'),
-       url('../fonts/noto-sans-sc-regular.woff') format('woff');
+  font-style: normal;
   font-weight: 400;
-  font-style: normal;
   font-display: swap;
+  src: url('../fonts/NotoSansSC-Regular.woff2') format('woff2');
 }
-
 @font-face {
   font-family: 'Noto Sans SC';
-  src: url('../fonts/noto-sans-sc-bold.woff2') format('woff2'),
-       url('../fonts/noto-sans-sc-bold.woff') format('woff');
-  font-weight: 600;
   font-style: normal;
+  font-weight: 500;
   font-display: swap;
+  src: url('../fonts/NotoSansSC-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/NotoSansSC-Bold.woff2') format('woff2');
 }
