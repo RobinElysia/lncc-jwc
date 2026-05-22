@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="辽宁省交通高等专科学校教务处 - 教学信息、考务通知、人才培养">
+  <title>辽宁省交通高等专科学校 教务处</title>
+  
+  <!-- Fonts -->
+  <link rel="preload" href="css/fonts.css" as="style">
+  <link rel="stylesheet" href="css/fonts.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div style="background-color: var(--secondary); padding: 0.75rem 1rem; font-size: 0.875rem; text-align: center; border-bottom: 1px solid var(--border);">
+    欢迎访问教务处信息发布平台 | <a href="#" style="margin-left: 1rem;">联系我们</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-banner">
+      <img src="images/banner.jpg" alt="校园主楼">
+      <div class="header-overlay">
+        <div class="header-content">
+          <div class="header-logo">
+            <img src="images/logo.jpg" alt="校徽">
+          </div>
+          <div class="header-text">
+            <h1>辽宁省交通高等专科学校<span class="title-separator">教&nbsp;务&nbsp;处</span></h1>
+            <p class="header-subtitle">ACADEMIC AFFAIRS OFFICE · LIAONING PROVINCIAL COLLEGE OF COMMUNICATIONS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">首页</a></li>
+      <li><a href="articles.html">通知公告</a></li>
+      <li><a href="https://jwxt.lncc.edu.cn" target="_blank">教务系统</a></li>
+      <li><a href="#" onclick="alert('资料下载功能建设中'); return false;">资料下载</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <div class="grid grid-2">
+      <!-- Teaching Section -->
+      <section aria-labelledby="teaching-heading">
+        <div class="section-header">
+          <h2 class="section-title" id="teaching-heading">教学信息</h2>
+          <span class="section-subtitle">TEACHING NOTICES</span>
+        </div>
+        <ul class="article-list" id="teaching-list">
+          <!-- Dynamically populated -->
+        </ul>
+      </section>
+
+      <!-- Exam Section -->
+      <section aria-labelledby="exam-heading">
+        <div class="section-header">
+          <h2 class="section-title" id="exam-heading">考务信息</h2>
+          <span class="section-subtitle">EXAMINATION</span>
+        </div>
+
+        <!-- Quick Links -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden; border-radius: 0.25rem; border: 1px solid var(--border); background-color: var(--border); margin-bottom: 1rem;">
+          <a href="#" onclick="alert('功能建设中'); return false;" style="flex: 1; background-color: var(--card); padding: 0.75rem; text-align: center; text-decoration: none; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='var(--secondary)'" onmouseout="this.style.backgroundColor='var(--card)'">
+            <div style="font-size: 0.875rem; font-weight: 500; color: var(--foreground);">考试安排查询</div>
+            <div style="font-size: 0.75rem; color: var(--muted-foreground);">期末/补考/缓考</div>
+          </a>
+          <a href="#" onclick="alert('功能建设中'); return false;" style="flex: 1; background-color: var(--card); padding: 0.75rem; text-align: center; text-decoration: none; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='var(--secondary)'" onmouseout="this.style.backgroundColor='var(--card)'">
+            <div style="font-size: 0.875rem; font-weight: 500; color: var(--foreground);">成绩查询</div>
+            <div style="font-size: 0.75rem; color: var(--muted-foreground);">课程成绩 / GPA</div>
+          </a>
+          <a href="#" onclick="alert('功能建设中'); return false;" style="flex: 1; background-color: var(--card); padding: 0.75rem; text-align: center; text-decoration: none; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='var(--secondary)'" onmouseout="this.style.backgroundColor='var(--card)'">
+            <div style="font-size: 0.875rem; font-weight: 500; color: var(--foreground);">考试报名</div>
+            <div style="font-size: 0.75rem; color: var(--muted-foreground);">全国 / 行业资格</div>
+          </a>
+          <a href="#" onclick="alert('功能建设中'); return false;" style="flex: 1; background-color: var(--card); padding: 0.75rem; text-align: center; text-decoration: none; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='var(--secondary)'" onmouseout="this.style.backgroundColor='var(--card)'">
+            <div style="font-size: 0.875rem; font-weight: 500; color: var(--foreground);">考试纪律</div>
+            <div style="font-size: 0.75rem; color: var(--muted-foreground);">学生考试规范</div>
+          </a>
+        </div>
+
+        <!-- Exam Notices List -->
+        <ul class="article-list" id="exam-list">
+          <!-- Dynamically populated -->
+        </ul>
+      </section>
+    </div>
+
+    <!-- Divider -->
+    <div style="margin: 2.5rem 0; border-top: 1px solid var(--border); opacity: 0.6;"></div>
+
+    <!-- Talent Cultivation Section -->
+    <section aria-labelledby="talent-heading">
+      <div class="section-header">
+        <h2 class="section-title" id="talent-heading">人才培养</h2>
+        <span class="section-subtitle">TALENT CULTIVATION</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        <div style="background-color: var(--secondary); padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid var(--primary);">
+          <h3 style="margin-top: 0; font-size: 1.125rem;">培养方案</h3>
+          <p style="margin: 0; color: var(--muted-foreground);">查看各专业的人才培养方案</p>
+        </div>
+        <div style="background-color: var(--secondary); padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid var(--accent);">
+          <h3 style="margin-top: 0; font-size: 1.125rem;">实践教学</h3>
+          <p style="margin: 0; color: var(--muted-foreground);">校内外实践教学基地建设</p>
+        </div>
+        <div style="background-color: var(--secondary); padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid var(--primary);">
+          <h3 style="margin-top: 0; font-size: 1.125rem;">学科竞赛</h3>
+          <p style="margin: 0; color: var(--muted-foreground);">学科竞赛与创新创业支持</p>
+        </div>
+        <div style="background-color: var(--secondary); padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid var(--accent);">
+          <h3 style="margin-top: 0; font-size: 1.125rem;">毕业设计</h3>
+          <p style="margin: 0; color: var(--muted-foreground);">毕业设计与论文指导规范</p>
+        </div>
+        <div style="background-color: var(--secondary); padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid var(--primary);">
+          <h3 style="margin-top: 0; font-size: 1.125rem;">教学评估</h3>
+          <p style="margin: 0; color: var(--muted-foreground);">教学质量评估与监督</p>
+        </div>
+        <div style="background-color: var(--secondary); padding: 1.5rem; border-radius: 0.5rem; border-left: 4px solid var(--accent);">
+          <h3 style="margin-top: 0; font-size: 1.125rem;">学位授予</h3>
+          <p style="margin: 0; color: var(--muted-foreground);">学位审批与授予管理</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div style="margin: 2.5rem 0; border-top: 1px solid var(--border); opacity: 0.6;"></div>
+
+    <!-- Download Section -->
+    <section aria-labelledby="download-heading">
+      <div class="section-header">
+        <h2 class="section-title" id="download-heading">资料下载</h2>
+        <span class="section-subtitle">DOWNLOAD CENTER</span>
+      </div>
+      <table style="width: 100%; border-collapse: collapse; background-color: var(--card);">
+        <thead>
+          <tr style="background-color: var(--secondary); border-bottom: 2px solid var(--border);">
+            <th style="padding: 1rem; text-align: left; font-weight: 600;">文件名</th>
+            <th style="padding: 1rem; text-align: center; font-weight: 600;">类型</th>
+            <th style="padding: 1rem; text-align: center; font-weight: 600;">大小</th>
+            <th style="padding: 1rem; text-align: center; font-weight: 600;">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 1rem;">教务处工作手册 (2025-2026).pdf</td>
+            <td style="padding: 1rem; text-align: center;"><span class="attachment-badge">PDF</span></td>
+            <td style="padding: 1rem; text-align: center; color: var(--muted-foreground);">2.4 MB</td>
+            <td style="padding: 1rem; text-align: center;"><a href="#" onclick="alert('下载链接建设中'); return false;">下载</a></td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 1rem;">教学大纲编制模板.docx</td>
+            <td style="padding: 1rem; text-align: center;"><span class="attachment-badge">DOC</span></td>
+            <td style="padding: 1rem; text-align: center; color: var(--muted-foreground);">156 KB</td>
+            <td style="padding: 1rem; text-align: center;"><a href="#" onclick="alert('下载链接建设中'); return false;">下载</a></td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 1rem;">2026年校历及教学周历.xlsx</td>
+            <td style="padding: 1rem; text-align: center;"><span class="attachment-badge">XLS</span></td>
+            <td style="padding: 1rem; text-align: center; color: var(--muted-foreground);">128 KB</td>
+            <td style="padding: 1rem; text-align: center;"><a href="#" onclick="alert('下载链接建设中'); return false;">下载</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 辽宁省交通高等专科学校 教务处</p>
+    <p>地址：辽宁省沈阳市浑南新区浑河中路 | 电话：024-62280000</p>
+    <p style="font-size: 0.75rem; margin-top: 1rem;">本站仅供学术交流使用，严禁用于任何商业目的</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/app.js"></script>
+  <script>
+    // Load teaching and exam articles on index page
+    staticApp.fetchArticles(function(articles) {
+      var teachingList = document.getElementById('teaching-list');
+      var examList = document.getElementById('exam-list');
+      
+      var teachingCategories = ['教学通知', '课程安排', '调停课', '教学运行', '教材课程'];
+      var teachingArticles = articles.filter(function(a) {
+        return teachingCategories.indexOf(a.category) !== -1;
+      }).slice(0, 7);
+
+      var examArticles = articles.filter(function(a) {
+        return a.category === '考务通知';
+      }).slice(0, 4);
+
+      // Render teaching articles
+      teachingArticles.forEach(function(article, index) {
+        var isNew = index < 2;
+        var categoryClass = 'category-teaching';
+        if (article.category !== '教学通知') {
+          categoryClass = 'category-other';
+        }
+
+        var li = document.createElement('li');
+        li.className = 'article-item';
+        li.setAttribute('data-category', article.category);
+        li.innerHTML = '<a href="detail.html?slug=' + article.slug + '" class="article-link">' +
+          '<span class="article-category ' + categoryClass + '">' + article.category + '</span>' +
+          '<span class="article-title">' + article.title + '</span>' +
+          (isNew ? '<span class="article-badge">NEW</span>' : '') +
+          '<time class="article-date">' + article.date + '</time>' +
+          '</a>';
+        teachingList.appendChild(li);
+      });
+
+      // Render exam articles
+      examArticles.forEach(function(article) {
+        var li = document.createElement('li');
+        li.className = 'article-item';
+        li.setAttribute('data-category', article.category);
+        li.innerHTML = '<a href="detail.html?slug=' + article.slug + '" class="article-link">' +
+          '<span style="height: 0.375rem; width: 0.375rem; border-radius: 50%; background-color: var(--accent); flex-shrink: 0; display: inline-block; margin-right: 0.5rem;"></span>' +
+          '<span class="article-title">' + article.title + '</span>' +
+          '<time class="article-date">' + article.date + '</time>' +
+          '</a>';
+        examList.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>

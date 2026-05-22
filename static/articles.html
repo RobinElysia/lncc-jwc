@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="通知公告 - 辽宁省交通高等专科学校教务处">
+  <title>通知公告 - 辽宁省交通高等专科学校 教务处</title>
+  
+  <!-- Fonts -->
+  <link rel="preload" href="css/fonts.css" as="style">
+  <link rel="stylesheet" href="css/fonts.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div style="background-color: var(--secondary); padding: 0.75rem 1rem; font-size: 0.875rem; text-align: center; border-bottom: 1px solid var(--border);">
+    欢迎访问教务处信息发布平台 | <a href="#" style="margin-left: 1rem;">联系我们</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-banner">
+      <img src="images/banner.jpg" alt="校园主楼">
+      <div class="header-overlay">
+        <div class="header-content">
+          <div class="header-logo">
+            <img src="images/logo.jpg" alt="校徽">
+          </div>
+          <div class="header-text">
+            <h1>辽宁省交通高等专科学校<span class="title-separator">教&nbsp;务&nbsp;处</span></h1>
+            <p class="header-subtitle">ACADEMIC AFFAIRS OFFICE · LIAONING PROVINCIAL COLLEGE OF COMMUNICATIONS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="articles.html" class="active">通知公告</a></li>
+      <li><a href="https://jwxt.lncc.edu.cn" target="_blank">教务系统</a></li>
+      <li><a href="#" onclick="alert('资料下载功能建设中'); return false;">资料下载</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section aria-labelledby="articles-heading">
+      <div class="section-header">
+        <h2 class="section-title" id="articles-heading">通知公告</h2>
+        <span class="section-subtitle">NOTICES & ANNOUNCEMENTS</span>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+        <button data-filter="all" class="active" style="padding: 0.5rem 1rem; background-color: var(--primary); color: var(--primary-foreground); border: none; border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;">全部</button>
+        <button data-filter="教学通知" style="padding: 0.5rem 1rem; background-color: var(--secondary); color: var(--foreground); border: 1px solid var(--border); border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;">教学通知</button>
+        <button data-filter="课程安排" style="padding: 0.5rem 1rem; background-color: var(--secondary); color: var(--foreground); border: 1px solid var(--border); border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;">课程安排</button>
+        <button data-filter="调停课" style="padding: 0.5rem 1rem; background-color: var(--secondary); color: var(--foreground); border: 1px solid var(--border); border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;">调停课</button>
+        <button data-filter="教学运行" style="padding: 0.5rem 1rem; background-color: var(--secondary); color: var(--foreground); border: 1px solid var(--border); border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;">教学运行</button>
+        <button data-filter="教材课程" style="padding: 0.5rem 1rem; background-color: var(--secondary); color: var(--foreground); border: 1px solid var(--border); border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;">教材课程</button>
+        <button data-filter="考务通知" style="padding: 0.5rem 1rem; background-color: var(--secondary); color: var(--foreground); border: 1px solid var(--border); border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem;">考务通知</button>
+      </div>
+
+      <!-- Articles List -->
+      <ul class="article-list" id="articles-list">
+        <!-- Dynamically populated -->
+      </ul>
+
+      <!-- No results message -->
+      <div id="no-results" style="text-align: center; padding: 2rem; color: var(--muted-foreground); display: none;">
+        <p>未找到匹配的公告</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 辽宁省交通高等专科学校 教务处</p>
+    <p>地址：辽宁省沈阳市浑南新区浑河中路 | 电话：024-62280000</p>
+    <p style="font-size: 0.75rem; margin-top: 1rem;">本站仅供学术交流使用，严禁用于任何商业目的</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/app.js"></script>
+  <script>
+    staticApp.fetchArticles(function(articles) {
+      var articlesList = document.getElementById('articles-list');
+      var noResults = document.getElementById('no-results');
+
+      // Render all articles initially
+      articles.forEach(function(article) {
+        var li = document.createElement('li');
+        li.className = 'article-item';
+        li.setAttribute('data-category', article.category);
+        
+        var categoryClass = 'category-' + article.category.replace(/\s+/g, '-').toLowerCase();
+        if (article.category === '教学通知') {
+          categoryClass = 'category-teaching';
+        } else if (article.category === '考务通知') {
+          categoryClass = 'category-exam';
+        } else {
+          categoryClass = 'category-other';
+        }
+
+        var link = document.createElement('a');
+        link.href = 'detail.html?slug=' + article.slug;
+        link.className = 'article-link';
+        
+        var categorySpan = document.createElement('span');
+        categorySpan.className = 'article-category ' + categoryClass;
+        categorySpan.textContent = article.category;
+        
+        var titleSpan = document.createElement('span');
+        titleSpan.className = 'article-title';
+        titleSpan.textContent = article.title;
+        
+        var dateSpan = document.createElement('time');
+        dateSpan.className = 'article-date';
+        dateSpan.textContent = article.date;
+        
+        link.appendChild(categorySpan);
+        link.appendChild(titleSpan);
+        link.appendChild(dateSpan);
+        li.appendChild(link);
+        articlesList.appendChild(li);
+      });
+
+      // Setup filter functionality
+      var filterBtns = document.querySelectorAll('[data-filter]');
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var filter = this.getAttribute('data-filter');
+          
+          // Update button state
+          filterBtns.forEach(function(b) {
+            b.style.backgroundColor = b === btn ? 'var(--primary)' : 'var(--secondary)';
+            b.style.color = b === btn ? 'var(--primary-foreground)' : 'var(--foreground)';
+            b.style.borderColor = b === btn ? 'var(--primary)' : 'var(--border)';
+          });
+
+          // Filter articles
+          var items = articlesList.querySelectorAll('.article-item');
+          var visibleCount = 0;
+          
+          items.forEach(function(item) {
+            var cat = item.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              item.style.display = '';
+              visibleCount++;
+            } else {
+              item.style.display = 'none';
+            }
+          });
+
+          // Show/hide no results message
+          noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
